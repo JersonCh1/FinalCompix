@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-07-01T16:27:39.073015",
+  "puntuacion_total": 0.5,
+  "puntuacion_maxima": 19,
+  "criterios": {
+    "lexico_sintactico": {
+      "puntos_obtenidos": 0,
+      "puntos_maximos": 2,
+      "detalles": [
+        "❌ holamundo.txt: Análisis léxico falló",
+        "❌ holamundo.txt: Análisis sintáctico falló",
+        "❌ holamundo.txt: Tokens no generados",
+        "❌ tipos-validos.txt: Análisis léxico falló",
+        "❌ tipos-validos.txt: Análisis sintáctico falló",
+        "❌ tipos-validos.txt: Tokens no generados"
+      ],
+      "estado": "NO CUMPLE"
+    },
+    "semantico": {
+      "puntos_obtenidos": 0,
+      "puntos_maximos": 4,
+      "detalles": [
+        "❌ tipos-validos.txt: Tabla de símbolos no generada",
+        "❌ tipos-validos.txt: Verificación semántica falló",
+        "❌ tipos-validos.txt: Verificación de tipos falló",
+        "❌ verificarvariable.txt: Tabla de símbolos no generada",
+        "❌ verificarvariable.txt: Verificación semántica falló",
+        "❌ verificarvariable.txt: Verificación de tipos falló"
+      ],
+      "estado": "NO CUMPLE"
+    },
+    "expresiones": {
+      "puntos_obtenidos": 0.5,
+      "puntos_maximos": 3,
+      "detalles": [
+        "❌ sumanumeros.txt: Assembly MIPS no generado",
+        "❌ sumanumeros.txt: No menciona compatibilidad SPIM",
+        "❌ tipos-validos.txt: Assembly MIPS no generado",
+        "❌ tipos-validos.txt: No menciona compatibilidad SPIM",
+        "✅ Archivos assembly encontrados: 1"
+      ],
+      "estado": "NO CUMPLE"
+    },
+    "if_else": {
+      "puntos_obtenidos": 0,
+      "puntos_maximos": 5,
+      "detalles": [
+        "❌ if-else-test.txt: Análisis sintáctico falló",
+        "❌ if-else-test.txt: Assembly con if-else no generado"
+      ],
+      "estado": "NO CUMPLE"
+    },
+    "funciones": {
+      "puntos_obtenidos": 0,
+      "puntos_maximos": 5,
+      "detalles": [
+        "❌ recursion-test.txt: Análisis sintáctico falló",
+        "❌ fibonaccirecursivo.txt: Análisis sintáctico falló"
+      ],
+      "estado": "NO CUMPLE"
+    }
+  },
+  "archivos_probados": [
+    {
+      "archivo": "holamundo.txt",
+      "tiempo": 0.107,
+      "codigo_salida": 1,
+      "stdout": "",
+      "stderr": "  File \"C:\\Users\\Jerson\\Downloads\\20-06COMPILADORES-main\\20-06COMPILADORES-main\\compilador\\sintactico.py\", line 777\n    def es_terminal_mejorado(simbolo, lista_tokens):\nIndentationError: unexpected indent\n",
+      "exitoso": false
+    },
+    {
+      "archivo": "tipos-validos.txt",
+      "tiempo": 0.119,
+      "codigo_salida": 1,
+      "stdout": "",
+      "stderr": "  File \"C:\\Users\\Jerson\\Downloads\\20-06COMPILADORES-main\\20-06COMPILADORES-main\\compilador\\sintactico.py\", line 777\n    def es_terminal_mejorado(simbolo, lista_tokens):\nIndentationError: unexpected indent\n",
+      "exitoso": false
+    }
+  ],
+  "errores_encontrados": []
+}

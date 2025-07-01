@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-07-01T16:36:44.078868",
+  "puntuacion_total": 4.5,
+  "puntuacion_maxima": 19,
+  "criterios": {
+    "lexico_sintactico": {
+      "puntos_obtenidos": 2.0,
+      "puntos_maximos": 2,
+      "detalles": [
+        "✅ holamundo.txt: Análisis léxico exitoso",
+        "❌ holamundo.txt: Análisis sintáctico falló",
+        "✅ holamundo.txt: Tokens generados correctamente",
+        "✅ tipos-validos.txt: Análisis léxico exitoso",
+        "❌ tipos-validos.txt: Análisis sintáctico falló",
+        "✅ tipos-validos.txt: Tokens generados correctamente"
+      ],
+      "estado": "CUMPLE"
+    },
+    "semantico": {
+      "puntos_obtenidos": 2,
+      "puntos_maximos": 4,
+      "detalles": [
+        "✅ tipos-validos.txt: Tabla de símbolos generada",
+        "❌ tipos-validos.txt: Verificación semántica falló",
+        "❌ tipos-validos.txt: Verificación de tipos falló",
+        "✅ verificarvariable.txt: Tabla de símbolos generada",
+        "❌ verificarvariable.txt: Verificación semántica falló",
+        "❌ verificarvariable.txt: Verificación de tipos falló"
+      ],
+      "estado": "NO CUMPLE"
+    },
+    "expresiones": {
+      "puntos_obtenidos": 0.5,
+      "puntos_maximos": 3,
+      "detalles": [
+        "❌ sumanumeros.txt: Assembly MIPS no generado",
+        "❌ sumanumeros.txt: No menciona compatibilidad SPIM",
+        "❌ tipos-validos.txt: Assembly MIPS no generado",
+        "❌ tipos-validos.txt: No menciona compatibilidad SPIM",
+        "✅ Archivos assembly encontrados: 1"
+      ],
+      "estado": "NO CUMPLE"
+    },
+    "if_else": {
+      "puntos_obtenidos": 0,
+      "puntos_maximos": 5,
+      "detalles": [
+        "❌ if-else-test.txt: Análisis sintáctico falló",
+        "❌ if-else-test.txt: Assembly con if-else no generado"
+      ],
+      "estado": "NO CUMPLE"
+    },
+    "funciones": {
+      "puntos_obtenidos": 0,
+      "puntos_maximos": 5,
+      "detalles": [
+        "❌ recursion-test.txt: Análisis sintáctico falló",
+        "❌ fibonaccirecursivo.txt: Análisis sintáctico falló"
+      ],
+      "estado": "NO CUMPLE"
+    }
+  },
+  "archivos_probados": [
+    {
+      "archivo": "holamundo.txt",
+      "tiempo": 1.261,
+      "codigo_salida": 1,
+      "stdout": "\nCódigo a compilar: holamundo.txt\n\nLista de Tokens:\n+------------+------------+---------+-----------+\n| Tipo       | Valor      |   Línea |   Columna |\n+============+============+=========+===========+\n| funcion    | fn         |       1 |         1 |\n+------------+------------+---------+-----------+\n| principal  | main       |       1 |         5 |\n+------------+------------+---------+-----------+\n| pabierto   | (          |       1 |        11 |\n+------------+------------+---------+-----------+\n| pcerrado   | )          |       1 |        12 |\n+------------+------------+---------+-----------+\n| tentero    | int        |       1 |        14 |\n+------------+------------+---------+-----------+\n| llaveabi   | {          |       1 |        19 |\n+------------+------------+---------+-----------+\n| mostrar    | show       |       2 |         2 |\n+------------+------------+---------+-----------+\n| pabierto   | (          |       2 |         7 |\n+------------+------------+---------+-----------+\n| ncadena    | Hola mundo |       2 |         8 |\n+------------+------------+---------+-----------+\n| pcerrado   | )          |       2 |        21 |\n+------------+------------+---------+-----------+\n| fsentencia | ;          |       2 |        22 |\n+------------+------------+---------+-----------+\n| devolver   | return     |       3 |         5 |\n+------------+------------+---------+-----------+\n| nentero    | 0          |       3 |        13 |\n+------------+------------+---------+-----------+\n| fsentencia | ;          |       3 |        15 |\n+------------+------------+---------+-----------+\n| llavecerr  | }          |       4 |         1 |\n+------------+------------+---------+-----------+\n| $          | $          |         |           |\n+------------+------------+---------+-----------+\n\nAnalisis lexico exitoso\nTokens escritos exitosamente en el archivo salida-tokens\\holamundo-tokens.txt\n\n",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Jerson\\Downloads\\20-06COMPILADORES-main\\20-06COMPILADORES-main\\compilador\\sintactico.py\", line 984, in <module>\n    print(\"\\n\\u274c\\u274c\\u274c Análisis sintáctico fallido \\u274c\\u274c\\u274c\\n\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Jerson\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode characters in position 2-4: character maps to <undefined>\n",
+      "exitoso": false
+    },
+    {
+      "archivo": "tipos-validos.txt",
+      "tiempo": 1.147,
+      "codigo_salida": 1,
+      "stdout": "\nCódigo a compilar: tipos-validos.txt\n\nLista de Tokens:\n+------------+---------+---------+-----------+\n| Tipo       | Valor   |   Línea |   Columna |\n+============+=========+=========+===========+\n| funcion    | fn      |       1 |         1 |\n+------------+---------+---------+-----------+\n| principal  | main    |       1 |         5 |\n+------------+---------+---------+-----------+\n| pabierto   | (       |       1 |        10 |\n+------------+---------+---------+-----------+\n| pcerrado   | )       |       1 |        11 |\n+------------+---------+---------+-----------+\n| tentero    | int     |       1 |        13 |\n+------------+---------+---------+-----------+\n| llaveabi   | {       |       1 |        18 |\n+------------+---------+---------+-----------+\n| id         | x       |       2 |         5 |\n+------------+---------+---------+-----------+\n| tentero    | int     |       2 |         8 |\n+------------+---------+---------+-----------+\n| igual      | =       |       2 |        13 |\n+------------+---------+---------+-----------+\n| nentero    | 5       |       2 |        15 |\n+------------+---------+---------+-----------+\n| fsentencia | ;       |       2 |        17 |\n+------------+---------+---------+-----------+\n| id         | y       |       3 |         5 |\n+------------+---------+---------+-----------+\n| tflotante  | float   |       3 |         8 |\n+------------+---------+---------+-----------+\n| igual      | =       |       3 |        15 |\n+------------+---------+---------+-----------+\n| nflotante  | 3.14    |       3 |        17 |\n+------------+---------+---------+-----------+\n| fsentencia | ;       |       3 |        22 |\n+------------+---------+---------+-----------+\n| id         | z       |       4 |         5 |\n+------------+---------+---------+-----------+\n| tflotante  | float   |       4 |         8 |\n+------------+---------+---------+-----------+\n| igual      | =       |       4 |        15 |\n+------------+---------+---------+-----------+\n| id         | x       |       4 |        17 |\n+------------+---------+---------+-----------+\n| suma       | +       |       4 |        20 |\n+------------+---------+---------+-----------+\n| id         | y       |       4 |        22 |\n+------------+---------+---------+-----------+\n| fsentencia | ;       |       4 |        24 |\n+------------+---------+---------+-----------+\n| id         | w       |       5 |         5 |\n+------------+---------+---------+-----------+\n| tentero    | int     |       5 |         8 |\n+------------+---------+---------+-----------+\n| igual      | =       |       5 |        13 |\n+------------+---------+---------+-----------+\n| nentero    | 10      |       5 |        15 |\n+------------+---------+---------+-----------+\n| fsentencia | ;       |       5 |        18 |\n+------------+---------+---------+-----------+\n| devolver   | return  |       6 |         5 |\n+------------+---------+---------+-----------+\n| nentero    | 0       |       6 |        13 |\n+------------+---------+---------+-----------+\n| fsentencia | ;       |       6 |        15 |\n+------------+---------+---------+-----------+\n| llavecerr  | }       |       7 |         1 |\n+------------+---------+---------+-----------+\n| $          | $       |         |           |\n+------------+---------+---------+-----------+\n\nAnalisis lexico exitoso\nTokens escritos exitosamente en el archivo salida-tokens\\tipos-validos-tokens.txt\n\nConstruyendo tabla de símbolos desde programaprincipal\nProcesando nodo programaprincipal con hijos: ['funcion', 'opcionprincipal', 'masfuncn']\nProcesando nodo función: restomain\nFunción main encontrada\nSímbolo agregado: main, categoria: function, tipo: None, parámetros: [], retorno: tentero\nEntrando a un nuevo ámbito. Total de hijos: 1\nProcesando nodo masinstrucciones: masinstrucciones\nNodo hijo: instruccion\nProcesando nodo asignaciones: asignaciones\nSímbolo agregado: x, categoria: variable, tipo: tentero, parámetros: None, retorno: None\nVariable registrada: x, tipo: tentero\nNodo hijo: masinstrucciones\nProcesando nodo masinstrucciones: masinstrucciones\nNodo hijo: instruccion\nProcesando nodo asignaciones: asignaciones\nSímbolo agregado: y, categoria: variable, tipo: tflotante, parámetros: None, retorno: None\nVariable registrada: y, tipo: tflotante\nNodo hijo: masinstrucciones\nProcesando nodo masinstrucciones: masinstrucciones\nNodo hijo: instruccion\nProcesando nodo asignaciones: asignaciones\nSímbolo agregado: z, categoria: variable, tipo: tflotante, parámetros: None, retorno: None\nVariable registrada: z, tipo: tflotante\nNodo hijo: masinstrucciones\nProcesando nodo masinstrucciones: masinstrucciones\nNodo hijo: instruccion\nProcesando nodo asignaciones: asignaciones\nSímbolo agregado: w, categoria: variable, tipo: tentero, parámetros: None, retorno: None\nVariable registrada: w, tipo: tentero\nNodo hijo: masinstrucciones\nProcesando nodo masinstrucciones: masinstrucciones\nNodo hijo: instruccion\nNodo hijo: masinstrucciones\nProcesando nodo masinstrucciones: masinstrucciones\nNodo hijo: e\nTabla de símbolos generada: salida-arboles\\arbol-tipos-validos-tabla-simbolos.csv\n",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Jerson\\Downloads\\20-06COMPILADORES-main\\20-06COMPILADORES-main\\compilador\\sintactico.py\", line 949, in <module>\n    print(\"\\n\\u2705 Verificación semántica exitosa: todas las variables están declaradas.\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Jerson\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2705' in position 2: character maps to <undefined>\n",
+      "exitoso": false
+    }
+  ],
+  "errores_encontrados": []
+}

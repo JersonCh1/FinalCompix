@@ -1,0 +1,60 @@
+{
+  "timestamp": "20250701_163754",
+  "puntos_estimados": 0,
+  "puntos_maximos": 19,
+  "porcentaje": 0.0,
+  "resultados_pruebas": {
+    "tipos-validos.txt": false,
+    "if-else-test.txt": false,
+    "recursion-test.txt": false,
+    "holamundo.txt": false
+  },
+  "log_completo": [
+    "[INFO] Archivo encontrado: compilador/lexico.py",
+    "[INFO] Archivo encontrado: compilador/sintactico.py",
+    "[INFO] Backup creado: backups_20250701_163754\\gramatica_gramatica.txt",
+    "[INFO] Backup creado: backups_20250701_163754\\tabla-ll1_tabla_ll1.csv",
+    "[INFO] Backup creado: backups_20250701_163754\\compilador_lexico.py",
+    "[INFO] Backup creado: backups_20250701_163754\\compilador_sintactico.py",
+    "[INFO] Backup creado: backups_20250701_163754\\compilador_assembly_mips.py",
+    "[INFO] Gramática actualizada con soporte for if-else",
+    "[INFO] Assembly MIPS ya tiene soporte para if-else",
+    "[INFO] Tabla LL(1) regenerada exitosamente",
+    "[INFO] Archivo de prueba existe: if-else-test.txt",
+    "[INFO] Archivo de prueba existe: recursion-test.txt",
+    "[INFO] Archivo de prueba existe: tipos-validos.txt",
+    "[INFO] Archivo de prueba existe: holamundo.txt"
+  ],
+  "errores": [
+    "[ERROR] Compilación fallida: tipos-validos.txt",
+    "[ERROR] Compilación fallida: if-else-test.txt",
+    "[ERROR] Compilación fallida: recursion-test.txt",
+    "[ERROR] Compilación fallida: holamundo.txt",
+    "[ERROR] Léxico y Sintáctico: 0/2 puntos",
+    "[ERROR] Semántico: 0/4 puntos",
+    "[ERROR] Expresiones: 0/3 puntos",
+    "[ERROR] If-Else: 0/5 puntos",
+    "[ERROR] Funciones: 0/5 puntos"
+  ],
+  "estado_general": "NECESITA_MEJORAS",
+  "recomendaciones": [
+    {
+      "prioridad": "ALTA",
+      "problema": "If-else no funciona",
+      "solucion": "Revisar gramática y regenerar tabla LL(1)",
+      "puntos_perdidos": 5
+    },
+    {
+      "prioridad": "ALTA",
+      "problema": "Funciones recursivas no funcionan",
+      "solucion": "Revisar análisis sintáctico de funciones",
+      "puntos_perdidos": 5
+    },
+    {
+      "prioridad": "CRÍTICA",
+      "problema": "Análisis semántico falla",
+      "solucion": "Revisar verificación de tipos y tabla de símbolos",
+      "puntos_perdidos": 4
+    }
+  ]
+}
