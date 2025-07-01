@@ -853,35 +853,45 @@ except ImportError:
 # FUNCIÓN DE INTEGRACIÓN CON ASSEMBLY
 # ===========================
 def ejecutar_generacion_assembly_integrada():
-   """Ejecuta la generación de assembly integrada con el análisis sintáctico"""
-   if not ASSEMBLY_DISPONIBLE:
-       print("❌ Generador de assembly no disponible")
-       return False
-   
-   # Verificar que el análisis previo fue exitoso
-   if not respuesta or errores_sintacticos or errores_semanticos:
-       print("❌ No se puede generar assembly debido a errores previos")
-       return False
-   
-   print("\n🔧 Iniciando generación de código assembly...")
-   
-   try:
-       generador = GeneradorAssembly()
-       codigo_assembly = generador.generar(arbol_sintactico, tabla_simbolos)
-       
-       # Guardar el código generado
-       ruta_archivo = guardar_codigo_assembly(codigo_assembly, archivo)
-       
-       print(f"✅ Código assembly generado exitosamente: {ruta_archivo}")
-       print("\n🚀 Para compilar y ejecutar:")
-       print(f"   gcc -no-pie -o programa {ruta_archivo}")
-       print("   ./programa")
-       
-       return True
-       
-   except Exception as e:
-       print(f"❌ Error durante la generación de assembly: {str(e)}")
-       return False
+    """Ejecuta la generación de assembly MIPS integrada con el análisis sintáctico"""
+    try:
+        from assembly_mips import GeneradorAssemblyMIPS, guardar_codigo_assembly_mips
+        ASSEMBLY_MIPS_DISPONIBLE = True
+    except ImportError:
+        ASSEMBLY_MIPS_DISPONIBLE = False
+        print("⚠️ Módulo assembly MIPS no disponible")
+        return False
+    
+    if not ASSEMBLY_MIPS_DISPONIBLE:
+        print("❌ Generador de assembly MIPS no disponible")
+        return False
+    
+    # Verificar que el análisis previo fue exitoso
+    if not respuesta or errores_sintacticos or errores_semanticos:
+        print("❌ No se puede generar assembly debido a errores previos")
+        return False
+    
+    print("\n🔧 Iniciando generación de código assembly MIPS...")
+    
+    try:
+        generador = GeneradorAssemblyMIPS()
+        codigo_assembly = generador.generar(arbol_sintactico, tabla_simbolos)
+        
+        # Guardar el código generado
+        ruta_archivo = guardar_codigo_assembly_mips(codigo_assembly, archivo)
+        
+        print(f"✅ Código assembly MIPS generado exitosamente: {ruta_archivo}")
+        print(f"🎯 Archivo compatible con SPIM simulator")
+        print("\n🚀 Para ejecutar en SPIM:")
+        print(f"   1. Abrir SPIM")
+        print(f"   2. Cargar archivo: {ruta_archivo}")
+        print(f"   3. Ejecutar desde 'main'")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error durante la generación de assembly MIPS: {str(e)}")
+        return False
 
 # Cargamos la tabla LL1.
 tabla_ll1 = cargar_tabla_ll1(ruta_archivo_ll1)

@@ -3,7 +3,7 @@ import re
 from tabulate import tabulate
 
 # Configuración del archivo a compilar
-archivo = 'verificarvariable.txt'
+archivo = 'recursion-test.txt'
 
 # Obtener la ruta completa del archivo
 directorio_actual = os.path.dirname(__file__)
