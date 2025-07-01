@@ -772,25 +772,6 @@ def ejecutar_verificacion_tipos(arbol_sintactico, tabla_simbolos):
 # Función que realiza el algoritmo analizador sintáctico.
 def analizador_sintactico(lista_de_tokens, tabla_ll1):
    errores_sintacticos = []
-
-    # MEJORA: Función para detectar correctamente terminales
-    def es_terminal_mejorado(simbolo, lista_tokens):
-        """Detecta si un símbolo es terminal de manera más robusta"""
-        # Lista de tokens conocidos
-        tokens_conocidos = [
-            'funcion', 'principal', 'pabierto', 'pcerrado', 'imprimir', 'id', 'coma',
-            'fsentencia', 'devolver', 'llaveabi', 'llavecerr', 'tentero', 'tflotante',
-            'tcadena', 'tbooleano', 'tvacio', 'condicional', 'sino', 'mientras',
-            'suma', 'resta', 'mul', 'div', 'residuo', 'menorque', 'mayorque',
-            'menorigualque', 'mayorigualque', 'igual', 'igualbool', 'diferentede',
-            'nentero', 'nflotante', 'ncadena', 'nbooleano', 'leer', '$'
-        ]
-        
-        # Un símbolo es terminal si:
-        # 1. Está en la lista de tokens conocidos, O
-        # 2. Aparece en la lista de tokens actual
-        return simbolo in tokens_conocidos or any(token.tipo == simbolo for token in lista_tokens)
-
    pila = []
    inicial = tabla_ll1.index[0]
    contador = 0
@@ -827,7 +808,7 @@ def analizador_sintactico(lista_de_tokens, tabla_ll1):
                            simbolos = produccion.split()
                            nuevos_hijos = []
                            for simbolo in simbolos:
-                               es_terminal = es_terminal_mejorado(simbolo, lista_de_tokens)
+                               es_terminal = simbolo in [token.tipo for token in lista_de_tokens]
                                nodo_hijo = Nodo(contador, simbolo, None, None, None, es_terminal)
                                nuevos_hijos.append(nodo_hijo)
                                contador += 1

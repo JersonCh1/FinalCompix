@@ -34,7 +34,6 @@ buclepara -> para pabierto asignaciones fsentencia expresion fsentencia asignaci
 
 buclemientras -> mientras pabierto expresion pcerrado llaveabi masinstrucciones llavecerr
 
-# CORRECCIÓN CRÍTICA: usar 'condicional' como TERMINAL, no como no-terminal recursivo
 condicional -> condicional pabierto expresion pcerrado llaveabi masinstrucciones llavecerr posibilidad
 
 posibilidad -> sino llaveabi masinstrucciones llavecerr

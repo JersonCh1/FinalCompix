@@ -3,11 +3,21 @@ import re
 from tabulate import tabulate
 
 # Configuración del archivo a compilar
-archivo = 'recursion-test.txt'
+archivo = 'if-else-test.txt'
 
 # Obtener la ruta completa del archivo
 directorio_actual = os.path.dirname(__file__)
 ruta_archivo = os.path.join(directorio_actual, '..', 'codigos-bocetos', archivo)
+
+# LISTA DE TOKENS PARA EL GENERADOR LL(1) - ESTO FALTABA
+tokens = [
+    'funcion', 'principal', 'pabierto', 'pcerrado', 'imprimir', 'comillas', 'id', 'coma', 
+    'fsentencia', 'devolver', 'detener', 'llaveabi', 'llavecerr', 'tentero', 'tflotante', 
+    'tbooleano', 'tcadena', 'tvacio', 'si', 'y', 'o', 'sino', 'entonces', 'mientras', 
+    'para', 'suma', 'resta', 'mul', 'div', 'residuo', 'menorque', 'mayorque', 
+    'menorigualque', 'mayorigualque', 'igual', 'igualbool', 'diferentede', 'nentero', 
+    'nflotante', 'ncadena', 'nbooleano', 'leer', 'condicional'
+]
 
 # Clase Token
 class Token:
@@ -277,7 +287,7 @@ def guardar_tokens_archivo():
     return ruta_salida
 
 def mostrar_resultado_lexico(errores):
-    """Muestra el resultado del análisis léxico"""
+    """Muestra el resultado del análisis léxico - VERSION SIN EMOJIS PARA WINDOWS"""
     print(f"\nCódigo a compilar: {archivo}\n")
     
     # Mostrar tabla de tokens
@@ -288,7 +298,7 @@ def mostrar_resultado_lexico(errores):
         print("\nErrores lexicos encontrados:")
         for error in errores:
             print(f"  - {error}")
-        print("\n❌ Análisis léxico fallido ❌\n")
+        print("\nAnálisis léxico fallido\n")
         return False
     else:
         print("\nAnalisis lexico exitoso")
@@ -308,5 +318,5 @@ if os.path.exists(ruta_archivo):
     # Realizar análisis léxico
     analizar_lexico(contenido_archivo)
 else:
-    print(f"❌ El archivo {archivo} no existe en la carpeta codigos-bocetos")
+    print(f"El archivo {archivo} no existe en la carpeta codigos-bocetos")
     exit(1)
